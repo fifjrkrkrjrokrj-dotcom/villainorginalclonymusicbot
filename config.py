@@ -11,6 +11,9 @@ API_HASH = getenv("API_HASH")
 BOT_TOKEN = getenv("BOT_TOKEN")
 BOT_ID = getenv("BOT_ID")
 
+SHRUTI_API_URL = "https://api.shrutibots.site"
+SHRUTI_API_KEY = "ShrutiBotsC0WH1GowF2HkGoKv4F3y"
+
 OWNER_USERNAME = getenv("OWNER_USERNAME", "")
 BOT_USERNAME = getenv("BOT_USERNAME", "")
 BOT_NAME = getenv("BOT_NAME", "")
