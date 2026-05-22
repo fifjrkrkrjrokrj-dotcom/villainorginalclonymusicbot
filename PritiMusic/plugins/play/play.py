@@ -355,7 +355,7 @@ async def play_commnd(
             elif "playlist" in url:
                 try:
                     details, plist_id = await Spotify.playlist(url)
-                except Exception import:
+                except Exception:
                     return await mystic.edit_text(_["play_3"])
                 streamtype = "playlist"
                 plist_type = "spplay"
@@ -525,8 +525,6 @@ async def play_commnd(
             return await mystic.edit_text("**🚫 sᴇᴄᴜʀɪᴛʏ ᴀʟᴇʀᴛ: ᴀᴅᴜʟᴛ ᴄᴏɴᴛᴇɴᴛ ɪs sᴛʀɪᴄᴛʟʏ ᴘʀᴏʜɪʙɪᴛᴇᴅ!**")
 
         streamtype = "youtube"
-        img = details["thumb"]
-        cap = _["play_10"].format(details["title"].title(), details["duration_min"])
         
     if str(playmode) == "Direct":
         if not plist_type:
@@ -610,8 +608,11 @@ async def play_commnd(
                 await mystic.delete()
                 
                 await message.reply_photo(
-                    photo=img,
-                    caption=cap,
+                    photo=details["thumb"],
+                    caption=_["play_10"].format(
+                        details["title"].title(),
+                        details["duration_min"],
+                    ),
                     reply_markup=InlineKeyboardMarkup(buttons),
                     has_spoiler=True
                 )
