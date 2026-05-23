@@ -338,7 +338,7 @@ async def play_commnd(
         elif await Spotify.valid(url):
             spotify = True
             if not config.SPOTIFY_CLIENT_ID and not config.SPOTIFY_CLIENT_SECRET:
-                return await mystic.edit_text("» sᴘᴏᴛɪғʏ ɪs ɴᴏᴛ sᴜᴘᴘᴏʀᴛᴇᴅ ʏᴇᴛ.\n\nᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ.")
+                return await mystic.edit_text("» sᴘᴏᴛɪғʏ ɪs ɴᴏᴛ sᴜᴘᴘᴏʀᴛᴇᴅ ʏᴇᴛ.\n\nᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪ聯 ʟᴀᴛᴇʀ.")
             if "track" in url:
                 try:
                     details, track_id = await Spotify.track(url)
@@ -355,7 +355,7 @@ async def play_commnd(
             elif "playlist" in url:
                 try:
                     details, plist_id = await Spotify.playlist(url)
-                except Exception import:
+                except Exception:
                     return await mystic.edit_text(_["play_3"])
                 streamtype = "playlist"
                 plist_type = "spplay"
@@ -414,7 +414,7 @@ async def play_commnd(
                 return await mystic.edit_text(_["play_3"])
                 
             if is_nsfw_content(details.get("title", "")):
-                await send_security_log(message, "ɴsғᴡ ᴠɪᴏʟᴀᴛɪᴏɴ", details.get("title", ""))
+                await send_security_log(message, "ɴsғᴡ ᴠɪᴏʟᴀ轉ᴀᴛɪᴏɴ", details.get("title", ""))
                 return await mystic.edit_text("**🚫 sᴇᴄᴜʀɪᴛʏ ᴀʟᴇʀᴛ: ᴀᴅᴜʟᴛ ᴄᴏɴᴛᴇɴᴛ ɪs sᴛʀɪᴄᴛʟʏ ᴘʀᴏʜɪʙɪᴛᴇᴅ!**")
 
             streamtype = "youtube"
