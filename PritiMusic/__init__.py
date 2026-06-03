@@ -1,3 +1,8 @@
+asyncio.get_event_loop()
+except RuntimeError:
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
+
 from PritiMusic.core.bot import Lucky
 from PritiMusic.core.dir import dirr
 from PritiMusic.core.git import git
