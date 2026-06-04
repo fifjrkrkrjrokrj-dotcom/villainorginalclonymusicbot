@@ -33,7 +33,7 @@ async def helper_private(
     C_BOT_OWNER_ID = await get_owner_id_from_db(bot.id)
     
     C_BOT_SUPPORT_CHAT = await get_cloned_support_chat(bot.id)
-    C_SUPPORT_CHAT = f"https://t.me/{C_BOT_SUPPORT_CHAT}"
+    C_SUPPORT_CHAT = C_BOT_SUPPORT_CHAT
     
     is_callback = isinstance(update, types.CallbackQuery)
     
